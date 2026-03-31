@@ -879,6 +879,30 @@ mod extra_sizes {
     pub type U12240 = uint!(0 0 0 0 1 0 1 1 1 1 1 1 0 1);
     pub type U16320 = uint!(0 0 0 0 0 0 1 1 1 1 1 1 1 1);
 
+    // HQC-KEM sizes
+    pub type U561 = uint!(1 0 0 0 1 1 0 0 0 1);
+    pub type U901 = uint!(1 0 1 0 0 0 0 1 1 1);
+    pub type U2209 = uint!(1 0 0 0 0 1 0 1 0 0 0 1);
+    pub type U2241 = uint!(1 0 0 0 0 0 1 1 0 0 0 1);
+    pub type U2305 = uint!(1 0 0 0 0 0 0 0 1 0 0 1);
+    pub type U2321 = uint!(1 0 0 0 1 0 0 0 1 0 0 1);
+    pub type U4602 = uint!(0 1 0 1 1 1 1 1 1 0 0 0 1);
+    pub type U4417 = uint!(1 0 0 0 0 0 1 0 1 0 0 0 1);
+    pub type U4433 = uint!(1 0 0 0 1 0 1 0 1 0 0 0 1);
+    pub type U4482 = uint!(0 1 0 0 0 0 0 1 1 0 0 0 1);
+    pub type U4514 = uint!(0 1 0 0 0 1 0 1 1 0 0 0 1);
+    pub type U7200 = uint!(0 0 0 0 0 1 0 0 0 0 1 1 1);
+    pub type U7205 = uint!(1 0 1 0 0 1 0 0 0 0 1 1 1);
+    pub type U7237 = uint!(1 0 1 0 0 0 1 0 0 0 1 1 1);
+    pub type U7333 = uint!(1 0 1 0 0 1 0 1 0 0 1 1 1);
+    pub type U8962 = uint!(0 1 0 0 0 0 0 0 1 1 0 0 0 1);
+    pub type U8978 = uint!(0 1 0 0 1 0 0 0 1 1 0 0 0 1);
+    pub type U14405 = uint!(1 0 1 0 0 0 1 0 0 0 0 1 1 1);
+    pub type U14421 = uint!(1 0 1 0 1 0 1 0 0 0 0 1 1 1);
+    pub type U17669 = uint!(1 0 1 0 0 0 0 0 1 0 1 0 0 0 1);
+    pub type U35851 = uint!(1 1 0 1 0 0 0 0 0 0 1 1 0 0 0 1);
+    pub type U57637 = uint!(1 0 1 0 0 1 0 0 1 0 0 0 0 1 1 1);
+
     impl_array_sizes! {
         base_extra,
         1040 => U1040,
@@ -1145,20 +1169,36 @@ mod extra_sizes {
     }
 
     // HQC-KEM sizes (FIPS 207)
-    pub type U2241 = uint!(1 0 0 0 0 0 1 1 0 0 0 1);
-    pub type U4433 = uint!(1 0 0 0 1 0 1 0 1 0 0 0 1);
-    pub type U4514 = uint!(0 1 0 0 0 1 0 1 1 0 0 0 1);
-    pub type U7237 = uint!(1 0 1 0 0 0 1 0 0 0 1 1 1);
-    pub type U8978 = uint!(0 1 0 0 1 0 0 0 1 1 0 0 0 1);
-    pub type U14421 = uint!(1 0 1 0 1 0 1 0 0 0 0 1 1 1);
-
     impl_array_sizes! {
-        hqc,
+        hqckem,
+        // Polynomial bitsizes
+        17669 => U17669,
+        35851 => U35851,
+        57637 => U57637,
+        // Polynomial bytesizes
+        2209 => U2209,
+        4482 => U4482,
+        7205 => U7205,
+        // Encapsulation key bytesizes
         2241 => U2241,
-        4433 => U4433,
         4514 => U4514,
         7237 => U7237,
+        // Decapsulation key bytesizes
+        2321 => U2321,
+        4602 => U4602,
+        7333 => U7333,
+        // Polynomial wordsizes (u64)
+        561 => U561,
+        901 => U901,
+        // PKE ciphertext bytesizes
+        4417 => U4417,
+        8962 => U8962,
+        14405 => U14405,
+        // KEM ciphertext bytesizes
+        4433 => U4433,
         8978 => U8978,
         14421 => U14421,
+        // Code bytesize
+        7200 => U7200,
     }
 }
