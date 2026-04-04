@@ -880,8 +880,11 @@ mod extra_sizes {
     pub type U16320 = uint!(0 0 0 0 0 0 1 1 1 1 1 1 1 1);
 
     // HQC-KEM sizes
+    pub type U554 = uint!(0 1 0 1 0 1 0 0 0 1);
     pub type U561 = uint!(1 0 0 0 1 1 0 0 0 1);
     pub type U901 = uint!(1 0 1 0 0 0 0 1 1 1);
+    pub type U1122 = uint!(0 1 0 0 0 1 1 0 0 0 1);
+    pub type U1802 = uint!(0 1 0 1 0 0 0 0 1 1 1);
     pub type U2209 = uint!(1 0 0 0 0 1 0 1 0 0 0 1);
     pub type U2241 = uint!(1 0 0 0 0 0 1 1 0 0 0 1);
     pub type U2305 = uint!(1 0 0 0 0 0 0 0 1 0 0 1);
@@ -1187,9 +1190,13 @@ mod extra_sizes {
         2321 => U2321,
         4602 => U4602,
         7333 => U7333,
-        // Polynomial wordsizes (u64)
+        // Polynomial wordsizes, after and before reduction (u64)
+        // 277 already exists
+        554 => U554,
         561 => U561,
+        1122 => U1122,
         901 => U901,
+        1802 => U1802,
         // PKE ciphertext bytesizes
         4417 => U4417,
         8962 => U8962,
